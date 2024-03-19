@@ -1,0 +1,99 @@
+<%- include('edit-User-Header')-%>
+
+<!-- Navbar Start- -->
+<div class="row bg-body-transparent">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg px-5 pt-3">
+          <img src="images/LogoLight.png" alt="Bootstrap" width="40" height="24">
+          <a class="navbar-brand ps-2 text-white" href="#">Guided Pro</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="main-nav nav-item">
+                  <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"></a>
+                </li>
+              </ul>
+          </div>
+        </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+  
+  <!-- main  container- -->
+  
+  <div
+    class="container d-flex justify-content-end align-items-center min-vh-80 mt-5"
+  >
+    <!-- login container- -->
+  
+    <div class="row rounded-5 p-1 bg-box box-area text-white">
+  
+  
+      <!-- -right box- -->
+      <div class="col-md-12 px-4 right-box">
+        <div class="row align-items-center">
+          <div class="header-text text-center mb-4">
+            <img src="https://cdn3d.iconscout.com/3d/premium/thumb/profile-5590850-4652486.png" width="100px" height="100px" alt="">
+            <h2 style="font-family: 'Outfit', sans-serif">Edit User</h2>
+            <p>Edit user Details.Confirm details are true</p>
+          </div>
+          <form action="" method="POST">
+            <input type="hidden" name="id" value="<%= user._id %>">
+            <div class="input-group mb-4 rounded-5">
+                <input
+                  type="text"
+                  name="FirstName"
+                  class="form-control form-control-lg bg-light fs-6"
+                  placeholder="First Name"
+                  required
+                  autocomplete="off"
+                  value="<%= user.FirstName %>"
+                />
+              </div>
+              <div class="input-group mb-4 rounded-5">
+                <input
+                  type="text"
+                  name="LastName"
+                  class="form-control form-control-lg bg-light fs-6"
+                  placeholder="Last Name"
+                  required
+                  autocomplete="off"
+                  value="<%= user.LastName %>"
+                />
+              </div>
+          <div class="input-group mb-4">
+            <input
+              type="email"
+              name="email"
+              class="form-control form-control-lg bg-light fs-6"
+              placeholder="example@gmail.com"
+              required
+              autocomplete="off"
+              value="<%= user.email %>"
+            />
+          </div>
+          <div class="input-group mb-5 mt-4">
+            <button
+              class="btn rounded-5 btn-lg btn-dark w-100 fs-6 submit-btn"
+              type="submit"
+            >
+              Confirm Update
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('edit-User-Footer')-%>

@@ -1,0 +1,122 @@
+<%- include('loginHeader')-%>
+
+<!-- Navbar Start- -->
+<div class="row bg-body-transparent">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg px-5 pt-3">
+          <img src="images/logo.png" alt="Bootstrap" width="40" height="24">
+          <a class="navbar-brand ps-2" href="#">Guided Pro</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto nav-list">
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="#">Services</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="#">Clients</a>
+              </li>
+              <li class="nav-item pe-3">
+                <a class="nav-link" href="#">About</a>
+              </li>
+            </ul>
+            <button  class="btn btn-gradient text-white  my-sm-0" type="submit"><a href="/register" style="text-decoration: none; color: white;">Join</a></button>
+          </div>
+        </nav>
+    </div>
+  </div>
+  <!-- Navbar End -->
+  
+  <!-- main  container- -->
+  
+  <div
+    class="container d-flex justify-content-end align-items-center min-vh-80 mt-5"
+  >
+    <!-- login container- -->
+  
+    <div class="row rounded-5 p-1 bg-white box-area">
+  
+  
+      <!-- -right box- -->
+      <div class="col-md-12 px-4 right-box">
+        <div class="row align-items-center">
+          <div class="header-text text-center mb-4">
+            <h2 style="font-family: 'Outfit', sans-serif">Sign In</h2>
+            <p>Welcome back</p>
+          </div>
+          <% if(typeof incorrect !== 'undefined'){%>
+            <div
+              class="alert incorrect_alert ms-4"
+              style="font-family: 'Poppins', sans-serif; font-weight: 400"
+              role="alert"
+            >
+              <%= incorrect %>
+            </div><%}%>
+          <form action="/login" method="post">
+            <div class="input input-group mb-3">
+              <input
+                type="email"
+                name="email"
+                class="form-control form-control-lg bg-light fs-6"
+                placeholder="Email"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div class="input-group mb-1">
+              <input
+                type="password"
+                name="password"
+                class="form-control form-control-lg bg-light fs-6"
+                placeholder="Password"
+              />
+            </div>
+            <div class="input-group mb-3 justify-content-between">
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="formCheck" />
+                <label for="FormCheck" class="form-check-label text-secondary"
+                  ><small>Remember Me</small></label
+                >
+              </div>
+              <div class="forgot">
+                <small><a href="#">Forgot Password?</a></small>
+              </div>
+            </div>
+            <div class="input-group mb-3">
+              <button
+                class="btn rounded-5 btn-lg btn-dark w-100 fs-6 submit-btn"
+                type="submit"
+              >
+                Sign In
+              </button>
+            </div>
+              <img src="images/OR.png" alt="" width="390px" class="mb-4">
+          </form>
+          <div class="input-group mb-3">
+            <button class="btn rounded-5 btn-lg btn-light w-100 fs 6">
+              <img
+                src="/images/google.png"
+                style="width: 20px"
+                class="me-2"
+              /><small>Continue with Google</small>
+            </button>
+          </div>
+          <div class="input-group mb-3">
+            <button class="btn rounded-5 btn-lg bg-black text-white w-100 fs 6">
+              <svg width="23" height="27" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black"><path d="M20.4571 7.15962C20.336 7.25412 18.1976 8.46595 18.1976 11.1605C18.1976 14.2772 20.9186 15.3798 21 15.4071C20.9875 15.4743 20.5677 16.9172 19.5654 18.3873C18.6717 19.6811 17.7382 20.9727 16.3183 20.9727C14.8983 20.9727 14.5329 20.1431 12.8936 20.1431C11.2962 20.1431 10.7282 21 9.42931 21C8.13045 21 7.22417 19.8029 6.18216 18.3327C4.97519 16.6064 4 13.9244 4 11.3789C4 7.29613 6.63948 5.13081 9.23719 5.13081C10.6175 5.13081 11.7681 6.0423 12.6347 6.0423C13.4595 6.0423 14.7459 5.07621 16.3162 5.07621C16.9113 5.07621 19.0496 5.13081 20.4571 7.15962ZM15.5707 3.34773C16.2201 2.57276 16.6795 1.49745 16.6795 0.422142C16.6795 0.273027 16.667 0.121812 16.6398 0C15.5832 0.039904 14.3261 0.707771 13.5681 1.59196C12.973 2.27243 12.4175 3.34773 12.4175 4.43774C12.4175 4.60156 12.4447 4.76538 12.4572 4.81788C12.524 4.83048 12.6326 4.84518 12.7412 4.84518C13.6892 4.84518 14.8816 4.20672 15.5707 3.34773Z" fill="white"></path></svg>
+              <small>Continue with Apple ID</small>
+            </button>
+          </div>
+          <div class="row">
+            <small>Don't have an account? <a href="/register">Sign Up</a></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('loginFooter')-%>
